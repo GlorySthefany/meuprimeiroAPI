@@ -1,4 +1,5 @@
 import express from 'express';
+import {db, firestore} from '../bancodedados/firebase';
 
 const app = express();
 
