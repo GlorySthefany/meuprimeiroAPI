@@ -16,17 +16,17 @@ app.get('/', (req, res) => {
 })
 
 app.post('/formulario', async (req, res) => {
-    const aniversariante = req.body.aniversariante;
-    const usuario = req.body.usuario
-    const senha = req.body.senha
-    const genero = req.body.genero
+    const nome = req.body.nome;
+    const telefone = req.body.telefone
+    const email= req.body.email
+    const descricao = req.body.descricao
 
     try {
         const docRef = await firestore.addDoc(firestore.collection(db, 'formulario'), {
-            aniversariante: aniversariante,
-            usuario: usuario,
-            senha: senha,
-            genero: genero
+            nome: nome,
+            telefone: telefone,
+            email: email,
+            descricao: descricao
         })
 
         return res.send('Resposta enviada com sucesso: ' + docRef.id)
